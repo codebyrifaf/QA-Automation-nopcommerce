@@ -1,0 +1,643 @@
+<testsuites id="" name="" tests="32" failures="16" skipped="0" errors="0" time="83.718893">
+<testsuite name="login.spec.js" timestamp="2025-07-15T17:51:05.453Z" hostname="chromium" tests="3" failures="1" skipped="0" time="42.334" errors="0">
+<testcase name="Login Functionality › should display login page elements" classname="login.spec.js" time="5.128">
+</testcase>
+<testcase name="Login Functionality › should show error for invalid credentials" classname="login.spec.js" time="5.683">
+</testcase>
+<testcase name="Login Functionality › should show error for empty fields" classname="login.spec.js" time="31.523">
+<failure message="login.spec.js:34:3 should show error for empty fields" type="FAILURE">
+<![CDATA[  [chromium] › login.spec.js:34:3 › Login Functionality › should show error for empty fields ───────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('button[type="submit"]').filter({ hasText: 'Log in' })
+
+
+      34 |   test('should show error for empty fields', async ({ page }) => {
+      35 |     await loginPage.navigateToLogin();
+    > 36 |     await loginPage.loginButton.click();
+         |                                 ^
+      37 |     
+      38 |     // Check for validation messages
+      39 |     await expect(page.locator('.field-validation-error')).toHaveCount({ min: 1 });
+        at E:\Automate\tests\login.spec.js:36:33
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\login-Login-Functionality-should-show-error-for-empty-fields-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\login-Login-Functionality-should-show-error-for-empty-fields-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\login-Login-Functionality-should-show-error-for-empty-fields-chromium\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\login-Login-Functionality-should-show-error-for-empty-fields-chromium\test-failed-1.png]]
+
+[[ATTACHMENT|test-results\login-Login-Functionality-should-show-error-for-empty-fields-chromium\video.webm]]
+
+[[ATTACHMENT|test-results\login-Login-Functionality-should-show-error-for-empty-fields-chromium\error-context.md]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="registration.spec.js" timestamp="2025-07-15T17:51:05.453Z" hostname="chromium" tests="2" failures="1" skipped="0" time="35.883" errors="0">
+<testcase name="User Registration › should display registration page elements" classname="registration.spec.js" time="4.374">
+</testcase>
+<testcase name="User Registration › should show validation errors for empty fields" classname="registration.spec.js" time="31.509">
+<failure message="registration.spec.js:25:3 should show validation errors for empty fields" type="FAILURE">
+<![CDATA[  [chromium] › registration.spec.js:25:3 › User Registration › should show validation errors for empty fields 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('#register-button')
+
+
+      25 |   test('should show validation errors for empty fields', async ({ page }) => {
+      26 |     await homePage.navigateToRegister();
+    > 27 |     await page.locator('#register-button').click();
+         |                                            ^
+      28 |     
+      29 |     // Check for validation errors
+      30 |     await expect(page.locator('.field-validation-error')).toHaveCount({ min: 1 });
+        at E:\Automate\tests\registration.spec.js:27:44
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\registration-User-Registra-b47b0-ion-errors-for-empty-fields-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\registration-User-Registra-b47b0-ion-errors-for-empty-fields-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\registration-User-Registra-b47b0-ion-errors-for-empty-fields-chromium\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\registration-User-Registra-b47b0-ion-errors-for-empty-fields-chromium\test-failed-1.png]]
+
+[[ATTACHMENT|test-results\registration-User-Registra-b47b0-ion-errors-for-empty-fields-chromium\video.webm]]
+
+[[ATTACHMENT|test-results\registration-User-Registra-b47b0-ion-errors-for-empty-fields-chromium\error-context.md]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="search.spec.js" timestamp="2025-07-15T17:51:05.453Z" hostname="chromium" tests="3" failures="0" skipped="0" time="16.49" errors="0">
+<testcase name="Search Functionality › should display search elements" classname="search.spec.js" time="6.23">
+</testcase>
+<testcase name="Search Functionality › should search with valid term" classname="search.spec.js" time="5.356">
+</testcase>
+<testcase name="Search Functionality › should handle search with no results" classname="search.spec.js" time="4.904">
+</testcase>
+</testsuite>
+<testsuite name="login.spec.js" timestamp="2025-07-15T17:51:05.453Z" hostname="firefox" tests="3" failures="3" skipped="0" time="70.187" errors="0">
+<testcase name="Login Functionality › should display login page elements" classname="login.spec.js" time="9.956">
+<failure message="login.spec.js:16:3 should display login page elements" type="FAILURE">
+<![CDATA[  [firefox] › login.spec.js:16:3 › Login Functionality › should display login page elements ────────
+
+    Error: Timed out 5000ms waiting for expect(page).toHaveTitle(expected)
+
+    Expected pattern: /Login/
+    Received string:  "Just a moment..."
+    Call log:
+      - Expect "toHaveTitle" with timeout 5000ms
+        8 × unexpected value "Just a moment..."
+
+
+      17 |     await loginPage.navigateToLogin();
+      18 |     
+    > 19 |     await expect(page).toHaveTitle(/Login/);
+         |                        ^
+      20 |     await expect(loginPage.emailInput).toBeVisible();
+      21 |     await expect(loginPage.passwordInput).toBeVisible();
+      22 |     await expect(loginPage.loginButton).toBeVisible();
+        at E:\Automate\tests\login.spec.js:19:24
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\login-Login-Functionality-should-display-login-page-elements-firefox\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\login-Login-Functionality-should-display-login-page-elements-firefox\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\login-Login-Functionality-should-display-login-page-elements-firefox\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\login-Login-Functionality-should-display-login-page-elements-firefox\test-failed-1.png]]
+
+[[ATTACHMENT|test-results\login-Login-Functionality-should-display-login-page-elements-firefox\video.webm]]
+
+[[ATTACHMENT|test-results\login-Login-Functionality-should-display-login-page-elements-firefox\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Login Functionality › should show error for invalid credentials" classname="login.spec.js" time="30.109">
+<failure message="login.spec.js:26:3 should show error for invalid credentials" type="FAILURE">
+<![CDATA[  [firefox] › login.spec.js:26:3 › Login Functionality › should show error for invalid credentials ─
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.fill: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('#Email')
+
+
+       at ..\page-objects\LoginPage.js:19
+
+      17 |
+      18 |   async login(email, password, rememberMe = false) {
+    > 19 |     await this.emailInput.fill(email);
+         |                           ^
+      20 |     await this.passwordInput.fill(password);
+      21 |     
+      22 |     if (rememberMe) {
+        at LoginPage.login (E:\Automate\page-objects\LoginPage.js:19:27)
+        at E:\Automate\tests\login.spec.js:28:21
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\login-Login-Functionality--32bbe-ror-for-invalid-credentials-firefox\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\login-Login-Functionality--32bbe-ror-for-invalid-credentials-firefox\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\login-Login-Functionality--32bbe-ror-for-invalid-credentials-firefox\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\login-Login-Functionality--32bbe-ror-for-invalid-credentials-firefox\test-failed-1.png]]
+
+[[ATTACHMENT|test-results\login-Login-Functionality--32bbe-ror-for-invalid-credentials-firefox\video.webm]]
+
+[[ATTACHMENT|test-results\login-Login-Functionality--32bbe-ror-for-invalid-credentials-firefox\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Login Functionality › should show error for empty fields" classname="login.spec.js" time="30.122">
+<failure message="login.spec.js:34:3 should show error for empty fields" type="FAILURE">
+<![CDATA[  [firefox] › login.spec.js:34:3 › Login Functionality › should show error for empty fields ────────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('button[type="submit"]').filter({ hasText: 'Log in' })
+
+
+      34 |   test('should show error for empty fields', async ({ page }) => {
+      35 |     await loginPage.navigateToLogin();
+    > 36 |     await loginPage.loginButton.click();
+         |                                 ^
+      37 |     
+      38 |     // Check for validation messages
+      39 |     await expect(page.locator('.field-validation-error')).toHaveCount({ min: 1 });
+        at E:\Automate\tests\login.spec.js:36:33
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\login-Login-Functionality-should-show-error-for-empty-fields-firefox\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\login-Login-Functionality-should-show-error-for-empty-fields-firefox\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\login-Login-Functionality-should-show-error-for-empty-fields-firefox\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\login-Login-Functionality-should-show-error-for-empty-fields-firefox\test-failed-1.png]]
+
+[[ATTACHMENT|test-results\login-Login-Functionality-should-show-error-for-empty-fields-firefox\video.webm]]
+
+[[ATTACHMENT|test-results\login-Login-Functionality-should-show-error-for-empty-fields-firefox\error-context.md]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="registration.spec.js" timestamp="2025-07-15T17:51:05.453Z" hostname="firefox" tests="2" failures="1" skipped="0" time="35.097" errors="0">
+<testcase name="User Registration › should display registration page elements" classname="registration.spec.js" time="4.977">
+</testcase>
+<testcase name="User Registration › should show validation errors for empty fields" classname="registration.spec.js" time="30.12">
+<failure message="registration.spec.js:25:3 should show validation errors for empty fields" type="FAILURE">
+<![CDATA[  [firefox] › registration.spec.js:25:3 › User Registration › should show validation errors for empty fields 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('#register-button')
+
+
+      25 |   test('should show validation errors for empty fields', async ({ page }) => {
+      26 |     await homePage.navigateToRegister();
+    > 27 |     await page.locator('#register-button').click();
+         |                                            ^
+      28 |     
+      29 |     // Check for validation errors
+      30 |     await expect(page.locator('.field-validation-error')).toHaveCount({ min: 1 });
+        at E:\Automate\tests\registration.spec.js:27:44
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\registration-User-Registra-b47b0-ion-errors-for-empty-fields-firefox\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\registration-User-Registra-b47b0-ion-errors-for-empty-fields-firefox\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\registration-User-Registra-b47b0-ion-errors-for-empty-fields-firefox\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\registration-User-Registra-b47b0-ion-errors-for-empty-fields-firefox\test-failed-1.png]]
+
+[[ATTACHMENT|test-results\registration-User-Registra-b47b0-ion-errors-for-empty-fields-firefox\video.webm]]
+
+[[ATTACHMENT|test-results\registration-User-Registra-b47b0-ion-errors-for-empty-fields-firefox\error-context.md]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="search.spec.js" timestamp="2025-07-15T17:51:05.453Z" hostname="firefox" tests="3" failures="0" skipped="0" time="17.195" errors="0">
+<testcase name="Search Functionality › should display search elements" classname="search.spec.js" time="6.596">
+</testcase>
+<testcase name="Search Functionality › should search with valid term" classname="search.spec.js" time="5.212">
+</testcase>
+<testcase name="Search Functionality › should handle search with no results" classname="search.spec.js" time="5.387">
+</testcase>
+</testsuite>
+<testsuite name="login.spec.js" timestamp="2025-07-15T17:51:05.453Z" hostname="webkit" tests="3" failures="3" skipped="0" time="83.037" errors="0">
+<testcase name="Login Functionality › should display login page elements" classname="login.spec.js" time="12.594">
+<failure message="login.spec.js:16:3 should display login page elements" type="FAILURE">
+<![CDATA[  [webkit] › login.spec.js:16:3 › Login Functionality › should display login page elements ─────────
+
+    Error: Timed out 5000ms waiting for expect(page).toHaveTitle(expected)
+
+    Expected pattern: /Login/
+    Received string:  "Just a moment..."
+    Call log:
+      - Expect "toHaveTitle" with timeout 5000ms
+        5 × unexpected value "Just a moment..."
+        - waiting for navigation to finish...
+
+
+      17 |     await loginPage.navigateToLogin();
+      18 |     
+    > 19 |     await expect(page).toHaveTitle(/Login/);
+         |                        ^
+      20 |     await expect(loginPage.emailInput).toBeVisible();
+      21 |     await expect(loginPage.passwordInput).toBeVisible();
+      22 |     await expect(loginPage.loginButton).toBeVisible();
+        at E:\Automate\tests\login.spec.js:19:24
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\login-Login-Functionality-should-display-login-page-elements-webkit\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\login-Login-Functionality-should-display-login-page-elements-webkit\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\login-Login-Functionality-should-display-login-page-elements-webkit\test-failed-1.png]]
+
+[[ATTACHMENT|test-results\login-Login-Functionality-should-display-login-page-elements-webkit\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Login Functionality › should show error for invalid credentials" classname="login.spec.js" time="35.223">
+<failure message="login.spec.js:26:3 should show error for invalid credentials" type="FAILURE">
+<![CDATA[  [webkit] › login.spec.js:26:3 › Login Functionality › should show error for invalid credentials ──
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.fill: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('#Email')
+        - waiting for navigation to finish...
+
+
+       at ..\page-objects\LoginPage.js:19
+
+      17 |
+      18 |   async login(email, password, rememberMe = false) {
+    > 19 |     await this.emailInput.fill(email);
+         |                           ^
+      20 |     await this.passwordInput.fill(password);
+      21 |     
+      22 |     if (rememberMe) {
+        at LoginPage.login (E:\Automate\page-objects\LoginPage.js:19:27)
+        at E:\Automate\tests\login.spec.js:28:21
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\login-Login-Functionality--32bbe-ror-for-invalid-credentials-webkit\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\login-Login-Functionality--32bbe-ror-for-invalid-credentials-webkit\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\login-Login-Functionality--32bbe-ror-for-invalid-credentials-webkit\test-failed-1.png]]
+
+[[ATTACHMENT|test-results\login-Login-Functionality--32bbe-ror-for-invalid-credentials-webkit\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Login Functionality › should show error for empty fields" classname="login.spec.js" time="35.22">
+<failure message="login.spec.js:34:3 should show error for empty fields" type="FAILURE">
+<![CDATA[  [webkit] › login.spec.js:34:3 › Login Functionality › should show error for empty fields ─────────
+
+    Test timeout of 30000ms exceeded.
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\login-Login-Functionality-should-show-error-for-empty-fields-webkit\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\login-Login-Functionality-should-show-error-for-empty-fields-webkit\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\login-Login-Functionality-should-show-error-for-empty-fields-webkit\test-failed-1.png]]
+
+[[ATTACHMENT|test-results\login-Login-Functionality-should-show-error-for-empty-fields-webkit\video.webm]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="registration.spec.js" timestamp="2025-07-15T17:51:05.453Z" hostname="webkit" tests="2" failures="2" skipped="0" time="48.738" errors="0">
+<testcase name="User Registration › should display registration page elements" classname="registration.spec.js" time="13.56">
+<failure message="registration.spec.js:13:3 should display registration page elements" type="FAILURE">
+<![CDATA[  [webkit] › registration.spec.js:13:3 › User Registration › should display registration page elements 
+
+    Error: Timed out 5000ms waiting for expect(page).toHaveTitle(expected)
+
+    Expected pattern: /Register/
+    Received string:  "Just a moment..."
+    Call log:
+      - Expect "toHaveTitle" with timeout 5000ms
+        3 × unexpected value "Just a moment..."
+        - waiting for navigation to finish...
+
+
+      14 |     await homePage.navigateToRegister();
+      15 |     
+    > 16 |     await expect(page).toHaveTitle(/Register/);
+         |                        ^
+      17 |     await expect(page.locator('#FirstName')).toBeVisible();
+      18 |     await expect(page.locator('#LastName')).toBeVisible();
+      19 |     await expect(page.locator('#Email')).toBeVisible();
+        at E:\Automate\tests\registration.spec.js:16:24
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\registration-User-Registra-16b0d--registration-page-elements-webkit\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\registration-User-Registra-16b0d--registration-page-elements-webkit\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\registration-User-Registra-16b0d--registration-page-elements-webkit\test-failed-1.png]]
+
+[[ATTACHMENT|test-results\registration-User-Registra-16b0d--registration-page-elements-webkit\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="User Registration › should show validation errors for empty fields" classname="registration.spec.js" time="35.178">
+<failure message="registration.spec.js:25:3 should show validation errors for empty fields" type="FAILURE">
+<![CDATA[  [webkit] › registration.spec.js:25:3 › User Registration › should show validation errors for empty fields 
+
+    Test timeout of 30000ms exceeded.
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\registration-User-Registra-b47b0-ion-errors-for-empty-fields-webkit\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\registration-User-Registra-b47b0-ion-errors-for-empty-fields-webkit\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\registration-User-Registra-b47b0-ion-errors-for-empty-fields-webkit\test-failed-1.png]]
+
+[[ATTACHMENT|test-results\registration-User-Registra-b47b0-ion-errors-for-empty-fields-webkit\video.webm]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="search.spec.js" timestamp="2025-07-15T17:51:05.453Z" hostname="webkit" tests="3" failures="0" skipped="0" time="7.899" errors="0">
+<testcase name="Search Functionality › should display search elements" classname="search.spec.js" time="2.237">
+</testcase>
+<testcase name="Search Functionality › should search with valid term" classname="search.spec.js" time="2.573">
+</testcase>
+<testcase name="Search Functionality › should handle search with no results" classname="search.spec.js" time="3.089">
+</testcase>
+</testsuite>
+<testsuite name="login.spec.js" timestamp="2025-07-15T17:51:05.453Z" hostname="mobile" tests="3" failures="3" skipped="0" time="85.092" errors="0">
+<testcase name="Login Functionality › should display login page elements" classname="login.spec.js" time="14.82">
+<failure message="login.spec.js:16:3 should display login page elements" type="FAILURE">
+<![CDATA[  [mobile] › login.spec.js:16:3 › Login Functionality › should display login page elements ─────────
+
+    Error: Timed out 5000ms waiting for expect(page).toHaveTitle(expected)
+
+    Expected pattern: /Login/
+    Received string:  "Just a moment..."
+    Call log:
+      - Expect "toHaveTitle" with timeout 5000ms
+        3 × unexpected value "Just a moment..."
+        - waiting for navigation to finish...
+
+
+      17 |     await loginPage.navigateToLogin();
+      18 |     
+    > 19 |     await expect(page).toHaveTitle(/Login/);
+         |                        ^
+      20 |     await expect(loginPage.emailInput).toBeVisible();
+      21 |     await expect(loginPage.passwordInput).toBeVisible();
+      22 |     await expect(loginPage.loginButton).toBeVisible();
+        at E:\Automate\tests\login.spec.js:19:24
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\login-Login-Functionality-should-display-login-page-elements-mobile\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\login-Login-Functionality-should-display-login-page-elements-mobile\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\login-Login-Functionality-should-display-login-page-elements-mobile\test-failed-1.png]]
+
+[[ATTACHMENT|test-results\login-Login-Functionality-should-display-login-page-elements-mobile\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Login Functionality › should show error for invalid credentials" classname="login.spec.js" time="35.144">
+<failure message="login.spec.js:26:3 should show error for invalid credentials" type="FAILURE">
+<![CDATA[  [mobile] › login.spec.js:26:3 › Login Functionality › should show error for invalid credentials ──
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.fill: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('#Email')
+        - waiting for navigation to finish...
+
+
+       at ..\page-objects\LoginPage.js:19
+
+      17 |
+      18 |   async login(email, password, rememberMe = false) {
+    > 19 |     await this.emailInput.fill(email);
+         |                           ^
+      20 |     await this.passwordInput.fill(password);
+      21 |     
+      22 |     if (rememberMe) {
+        at LoginPage.login (E:\Automate\page-objects\LoginPage.js:19:27)
+        at E:\Automate\tests\login.spec.js:28:21
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\login-Login-Functionality--32bbe-ror-for-invalid-credentials-mobile\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\login-Login-Functionality--32bbe-ror-for-invalid-credentials-mobile\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\login-Login-Functionality--32bbe-ror-for-invalid-credentials-mobile\test-failed-1.png]]
+
+[[ATTACHMENT|test-results\login-Login-Functionality--32bbe-ror-for-invalid-credentials-mobile\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Login Functionality › should show error for empty fields" classname="login.spec.js" time="35.128">
+<failure message="login.spec.js:34:3 should show error for empty fields" type="FAILURE">
+<![CDATA[  [mobile] › login.spec.js:34:3 › Login Functionality › should show error for empty fields ─────────
+
+    Test timeout of 30000ms exceeded.
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\login-Login-Functionality-should-show-error-for-empty-fields-mobile\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\login-Login-Functionality-should-show-error-for-empty-fields-mobile\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\login-Login-Functionality-should-show-error-for-empty-fields-mobile\test-failed-1.png]]
+
+[[ATTACHMENT|test-results\login-Login-Functionality-should-show-error-for-empty-fields-mobile\video.webm]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="registration.spec.js" timestamp="2025-07-15T17:51:05.453Z" hostname="mobile" tests="2" failures="2" skipped="0" time="48.416" errors="0">
+<testcase name="User Registration › should display registration page elements" classname="registration.spec.js" time="13.292">
+<failure message="registration.spec.js:13:3 should display registration page elements" type="FAILURE">
+<![CDATA[  [mobile] › registration.spec.js:13:3 › User Registration › should display registration page elements 
+
+    Error: Timed out 5000ms waiting for expect(page).toHaveTitle(expected)
+
+    Expected pattern: /Register/
+    Received string:  "Just a moment..."
+    Call log:
+      - Expect "toHaveTitle" with timeout 5000ms
+        4 × unexpected value "Just a moment..."
+        - waiting for navigation to finish...
+
+
+      14 |     await homePage.navigateToRegister();
+      15 |     
+    > 16 |     await expect(page).toHaveTitle(/Register/);
+         |                        ^
+      17 |     await expect(page.locator('#FirstName')).toBeVisible();
+      18 |     await expect(page.locator('#LastName')).toBeVisible();
+      19 |     await expect(page.locator('#Email')).toBeVisible();
+        at E:\Automate\tests\registration.spec.js:16:24
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\registration-User-Registra-16b0d--registration-page-elements-mobile\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\registration-User-Registra-16b0d--registration-page-elements-mobile\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\registration-User-Registra-16b0d--registration-page-elements-mobile\test-failed-1.png]]
+
+[[ATTACHMENT|test-results\registration-User-Registra-16b0d--registration-page-elements-mobile\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="User Registration › should show validation errors for empty fields" classname="registration.spec.js" time="35.124">
+<failure message="registration.spec.js:25:3 should show validation errors for empty fields" type="FAILURE">
+<![CDATA[  [mobile] › registration.spec.js:25:3 › User Registration › should show validation errors for empty fields 
+
+    Test timeout of 30000ms exceeded.
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\registration-User-Registra-b47b0-ion-errors-for-empty-fields-mobile\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\registration-User-Registra-b47b0-ion-errors-for-empty-fields-mobile\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\registration-User-Registra-b47b0-ion-errors-for-empty-fields-mobile\test-failed-1.png]]
+
+[[ATTACHMENT|test-results\registration-User-Registra-b47b0-ion-errors-for-empty-fields-mobile\video.webm]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="search.spec.js" timestamp="2025-07-15T17:51:05.453Z" hostname="mobile" tests="3" failures="0" skipped="0" time="6.77" errors="0">
+<testcase name="Search Functionality › should display search elements" classname="search.spec.js" time="1.554">
+</testcase>
+<testcase name="Search Functionality › should search with valid term" classname="search.spec.js" time="2.427">
+</testcase>
+<testcase name="Search Functionality › should handle search with no results" classname="search.spec.js" time="2.789">
+</testcase>
+</testsuite>
+</testsuites>
