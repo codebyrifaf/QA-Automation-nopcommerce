@@ -1,28 +1,105 @@
-<testsuites id="" name="" tests="32" failures="16" skipped="0" errors="0" time="83.718893">
-<testsuite name="login.spec.js" timestamp="2025-07-15T17:51:05.453Z" hostname="chromium" tests="3" failures="1" skipped="0" time="42.334" errors="0">
-<testcase name="Login Functionality › should display login page elements" classname="login.spec.js" time="5.128">
+<testsuites id="" name="" tests="32" failures="20" skipped="0" errors="0" time="107.37512800000002">
+<testsuite name="login.spec.js" timestamp="2025-07-15T18:06:30.115Z" hostname="chromium" tests="3" failures="3" skipped="0" time="49.764" errors="0">
+<testcase name="Login Functionality › should display login page elements" classname="login.spec.js" time="12.254">
+<failure message="login.spec.js:16:3 should display login page elements" type="FAILURE">
+<![CDATA[  [chromium] › login.spec.js:16:3 › Login Functionality › should display login page elements ───────
+
+    Error: Timed out 5000ms waiting for expect(page).toHaveTitle(expected)
+
+    Expected pattern: /Login/
+    Received string:  "Just a moment..."
+    Call log:
+      - Expect "toHaveTitle" with timeout 5000ms
+        8 × unexpected value "Just a moment..."
+
+
+      17 |     await loginPage.navigateToLogin();
+      18 |     
+    > 19 |     await expect(page).toHaveTitle(/Login/);
+         |                        ^
+      20 |     await expect(loginPage.emailInput).toBeVisible();
+      21 |     await expect(loginPage.passwordInput).toBeVisible();
+      22 |     await expect(loginPage.loginButton).toBeVisible();
+        at E:\Automate\tests\login.spec.js:19:24
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\login-Login-Functionality-should-display-login-page-elements-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\login-Login-Functionality-should-display-login-page-elements-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\login-Login-Functionality-should-display-login-page-elements-chromium\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\login-Login-Functionality-should-display-login-page-elements-chromium\test-failed-1.png]]
+
+[[ATTACHMENT|test-results\login-Login-Functionality-should-display-login-page-elements-chromium\video.webm]]
+
+[[ATTACHMENT|test-results\login-Login-Functionality-should-display-login-page-elements-chromium\error-context.md]]
+]]>
+</system-out>
 </testcase>
-<testcase name="Login Functionality › should show error for invalid credentials" classname="login.spec.js" time="5.683">
-</testcase>
-<testcase name="Login Functionality › should show error for empty fields" classname="login.spec.js" time="31.523">
-<failure message="login.spec.js:34:3 should show error for empty fields" type="FAILURE">
-<![CDATA[  [chromium] › login.spec.js:34:3 › Login Functionality › should show error for empty fields ───────
+<testcase name="Login Functionality › should show error for invalid credentials" classname="login.spec.js" time="31.577">
+<failure message="login.spec.js:26:3 should show error for invalid credentials" type="FAILURE">
+<![CDATA[  [chromium] › login.spec.js:26:3 › Login Functionality › should show error for invalid credentials 
 
     Test timeout of 30000ms exceeded.
 
-    Error: locator.click: Test timeout of 30000ms exceeded.
+    Error: locator.fill: Test timeout of 30000ms exceeded.
     Call log:
-      - waiting for locator('button[type="submit"]').filter({ hasText: 'Log in' })
+      - waiting for locator('#Email')
 
 
-      34 |   test('should show error for empty fields', async ({ page }) => {
-      35 |     await loginPage.navigateToLogin();
-    > 36 |     await loginPage.loginButton.click();
-         |                                 ^
+       at ..\page-objects\LoginPage.js:19
+
+      17 |
+      18 |   async login(email, password, rememberMe = false) {
+    > 19 |     await this.emailInput.fill(email);
+         |                           ^
+      20 |     await this.passwordInput.fill(password);
+      21 |     
+      22 |     if (rememberMe) {
+        at LoginPage.login (E:\Automate\page-objects\LoginPage.js:19:27)
+        at E:\Automate\tests\login.spec.js:28:21
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\login-Login-Functionality--32bbe-ror-for-invalid-credentials-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\login-Login-Functionality--32bbe-ror-for-invalid-credentials-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\login-Login-Functionality--32bbe-ror-for-invalid-credentials-chromium\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\login-Login-Functionality--32bbe-ror-for-invalid-credentials-chromium\test-failed-1.png]]
+
+[[ATTACHMENT|test-results\login-Login-Functionality--32bbe-ror-for-invalid-credentials-chromium\video.webm]]
+
+[[ATTACHMENT|test-results\login-Login-Functionality--32bbe-ror-for-invalid-credentials-chromium\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Login Functionality › should show error for empty fields" classname="login.spec.js" time="5.933">
+<failure message="login.spec.js:34:3 should show error for empty fields" type="FAILURE">
+<![CDATA[  [chromium] › login.spec.js:34:3 › Login Functionality › should show error for empty fields ───────
+
+    Error: locator._expect: expectedNumber: expected number, got object
+
       37 |     
       38 |     // Check for validation messages
-      39 |     await expect(page.locator('.field-validation-error')).toHaveCount({ min: 1 });
-        at E:\Automate\tests\login.spec.js:36:33
+    > 39 |     await expect(page.locator('.field-validation-error')).toHaveCount({ min: 1 });
+         |                                                           ^
+      40 |   });
+      41 | });
+        at E:\Automate\tests\login.spec.js:39:59
 
     attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
     ..\test-results\login-Login-Functionality-should-show-error-for-empty-fields-chromium\test-failed-1.png
@@ -46,10 +123,51 @@
 </system-out>
 </testcase>
 </testsuite>
-<testsuite name="registration.spec.js" timestamp="2025-07-15T17:51:05.453Z" hostname="chromium" tests="2" failures="1" skipped="0" time="35.883" errors="0">
-<testcase name="User Registration › should display registration page elements" classname="registration.spec.js" time="4.374">
+<testsuite name="registration.spec.js" timestamp="2025-07-15T18:06:30.115Z" hostname="chromium" tests="2" failures="2" skipped="0" time="44.028" errors="0">
+<testcase name="User Registration › should display registration page elements" classname="registration.spec.js" time="12.187">
+<failure message="registration.spec.js:13:3 should display registration page elements" type="FAILURE">
+<![CDATA[  [chromium] › registration.spec.js:13:3 › User Registration › should display registration page elements 
+
+    Error: Timed out 5000ms waiting for expect(page).toHaveTitle(expected)
+
+    Expected pattern: /Register/
+    Received string:  "Just a moment..."
+    Call log:
+      - Expect "toHaveTitle" with timeout 5000ms
+        8 × unexpected value "Just a moment..."
+
+
+      14 |     await homePage.navigateToRegister();
+      15 |     
+    > 16 |     await expect(page).toHaveTitle(/Register/);
+         |                        ^
+      17 |     await expect(page.locator('#FirstName')).toBeVisible();
+      18 |     await expect(page.locator('#LastName')).toBeVisible();
+      19 |     await expect(page.locator('#Email')).toBeVisible();
+        at E:\Automate\tests\registration.spec.js:16:24
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\registration-User-Registra-16b0d--registration-page-elements-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\registration-User-Registra-16b0d--registration-page-elements-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\registration-User-Registra-16b0d--registration-page-elements-chromium\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\registration-User-Registra-16b0d--registration-page-elements-chromium\test-failed-1.png]]
+
+[[ATTACHMENT|test-results\registration-User-Registra-16b0d--registration-page-elements-chromium\video.webm]]
+
+[[ATTACHMENT|test-results\registration-User-Registra-16b0d--registration-page-elements-chromium\error-context.md]]
+]]>
+</system-out>
 </testcase>
-<testcase name="User Registration › should show validation errors for empty fields" classname="registration.spec.js" time="31.509">
+<testcase name="User Registration › should show validation errors for empty fields" classname="registration.spec.js" time="31.841">
 <failure message="registration.spec.js:25:3 should show validation errors for empty fields" type="FAILURE">
 <![CDATA[  [chromium] › registration.spec.js:25:3 › User Registration › should show validation errors for empty fields 
 
@@ -91,36 +209,44 @@
 </system-out>
 </testcase>
 </testsuite>
-<testsuite name="search.spec.js" timestamp="2025-07-15T17:51:05.453Z" hostname="chromium" tests="3" failures="0" skipped="0" time="16.49" errors="0">
-<testcase name="Search Functionality › should display search elements" classname="search.spec.js" time="6.23">
+<testsuite name="search.spec.js" timestamp="2025-07-15T18:06:30.115Z" hostname="chromium" tests="3" failures="0" skipped="0" time="27.584" errors="0">
+<testcase name="Search Functionality › should display search elements" classname="search.spec.js" time="6.392">
 </testcase>
-<testcase name="Search Functionality › should search with valid term" classname="search.spec.js" time="5.356">
+<testcase name="Search Functionality › should search with valid term" classname="search.spec.js" time="14.018">
 </testcase>
-<testcase name="Search Functionality › should handle search with no results" classname="search.spec.js" time="4.904">
+<testcase name="Search Functionality › should handle search with no results" classname="search.spec.js" time="7.174">
 </testcase>
 </testsuite>
-<testsuite name="login.spec.js" timestamp="2025-07-15T17:51:05.453Z" hostname="firefox" tests="3" failures="3" skipped="0" time="70.187" errors="0">
-<testcase name="Login Functionality › should display login page elements" classname="login.spec.js" time="9.956">
+<testsuite name="login.spec.js" timestamp="2025-07-15T18:06:30.115Z" hostname="firefox" tests="3" failures="3" skipped="0" time="120.938" errors="0">
+<testcase name="Login Functionality › should display login page elements" classname="login.spec.js" time="30.402">
 <failure message="login.spec.js:16:3 should display login page elements" type="FAILURE">
 <![CDATA[  [firefox] › login.spec.js:16:3 › Login Functionality › should display login page elements ────────
 
-    Error: Timed out 5000ms waiting for expect(page).toHaveTitle(expected)
+    Test timeout of 30000ms exceeded.
 
-    Expected pattern: /Login/
-    Received string:  "Just a moment..."
+    Error: locator.click: Test timeout of 30000ms exceeded.
     Call log:
-      - Expect "toHaveTitle" with timeout 5000ms
-        8 × unexpected value "Just a moment..."
+      - waiting for locator('.ico-login')
+        - locator resolved to <a class="ico-login" href="/login?returnUrl=%2F">Log in</a>
+      - attempting click action
+        - waiting for element to be visible, enabled and stable
+        - element is visible, enabled and stable
+        - scrolling into view if needed
+        - done scrolling
+        - performing click action
 
 
-      17 |     await loginPage.navigateToLogin();
-      18 |     
-    > 19 |     await expect(page).toHaveTitle(/Login/);
-         |                        ^
-      20 |     await expect(loginPage.emailInput).toBeVisible();
-      21 |     await expect(loginPage.passwordInput).toBeVisible();
-      22 |     await expect(loginPage.loginButton).toBeVisible();
-        at E:\Automate\tests\login.spec.js:19:24
+       at ..\page-objects\LoginPage.js:15
+
+      13 |
+      14 |   async navigateToLogin() {
+    > 15 |     await this.loginLink.click();
+         |                          ^
+      16 |   }
+      17 |
+      18 |   async login(email, password, rememberMe = false) {
+        at LoginPage.navigateToLogin (E:\Automate\page-objects\LoginPage.js:15:26)
+        at E:\Automate\tests\login.spec.js:17:21
 
     attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
     ..\test-results\login-Login-Functionality-should-display-login-page-elements-firefox\test-failed-1.png
@@ -143,28 +269,35 @@
 ]]>
 </system-out>
 </testcase>
-<testcase name="Login Functionality › should show error for invalid credentials" classname="login.spec.js" time="30.109">
+<testcase name="Login Functionality › should show error for invalid credentials" classname="login.spec.js" time="30.514">
 <failure message="login.spec.js:26:3 should show error for invalid credentials" type="FAILURE">
 <![CDATA[  [firefox] › login.spec.js:26:3 › Login Functionality › should show error for invalid credentials ─
 
     Test timeout of 30000ms exceeded.
 
-    Error: locator.fill: Test timeout of 30000ms exceeded.
+    Error: locator.click: Test timeout of 30000ms exceeded.
     Call log:
-      - waiting for locator('#Email')
+      - waiting for locator('.ico-login')
+        - locator resolved to <a class="ico-login" href="/login?returnUrl=%2F">Log in</a>
+      - attempting click action
+        - waiting for element to be visible, enabled and stable
+        - element is visible, enabled and stable
+        - scrolling into view if needed
+        - done scrolling
+        - performing click action
 
 
-       at ..\page-objects\LoginPage.js:19
+       at ..\page-objects\LoginPage.js:15
 
+      13 |
+      14 |   async navigateToLogin() {
+    > 15 |     await this.loginLink.click();
+         |                          ^
+      16 |   }
       17 |
       18 |   async login(email, password, rememberMe = false) {
-    > 19 |     await this.emailInput.fill(email);
-         |                           ^
-      20 |     await this.passwordInput.fill(password);
-      21 |     
-      22 |     if (rememberMe) {
-        at LoginPage.login (E:\Automate\page-objects\LoginPage.js:19:27)
-        at E:\Automate\tests\login.spec.js:28:21
+        at LoginPage.navigateToLogin (E:\Automate\page-objects\LoginPage.js:15:26)
+        at E:\Automate\tests\login.spec.js:27:21
 
     attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
     ..\test-results\login-Login-Functionality--32bbe-ror-for-invalid-credentials-firefox\test-failed-1.png
@@ -187,32 +320,228 @@
 ]]>
 </system-out>
 </testcase>
-<testcase name="Login Functionality › should show error for empty fields" classname="login.spec.js" time="30.122">
+<testcase name="Login Functionality › should show error for empty fields" classname="login.spec.js" time="60.022">
 <failure message="login.spec.js:34:3 should show error for empty fields" type="FAILURE">
 <![CDATA[  [firefox] › login.spec.js:34:3 › Login Functionality › should show error for empty fields ────────
 
     Test timeout of 30000ms exceeded.
 
+    Tearing down "context" exceeded the test timeout of 30000ms.
+
+    Error: browserContext._wrapApiCall: Test timeout of 30000ms exceeded.
+    Browser logs:
+
+    <launching> C:\Users\USER\AppData\Local\ms-playwright\firefox-1489\firefox\firefox.exe -no-remote -wait-for-browser -foreground -profile C:\Users\USER\AppData\Local\Temp\playwright_firefoxdev_profile-FzmGvQ -juggler-pipe -silent
+    <launched> pid=30584
+    [pid=30584][err] JavaScript warning: resource://services-settings/Utils.sys.mjs, line 116: unreachable code after return statement
+    [pid=30584][out] console.warn: services.settings: Ignoring preference override of remote settings server
+    [pid=30584][out] console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+    [pid=30584][out] 
+    [pid=30584][out] Juggler listening to the pipe
+    [pid=30584][out] console.error: "Warning: unrecognized command line flag" "-foreground"
+    [pid=30584][err] JavaScript error: chrome://juggler/content/Helper.js, line 82: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIWebProgress.removeProgressListener]
+    [pid=30584][out] console.error: SearchEngineSelector: "Received empty search configuration!"
+    [pid=30584][out] console.error: "Received empty top sites configuration!"
+    [pid=30584][out] console.error: SearchEngineSelector: "Received empty search configuration!"
+    [pid=30584][out] console.error: SearchService: "#init: failure initializing search:" [Exception... "Failed to get engine data from Remote Settings"  nsresult: "0x8000ffff (NS_ERROR_UNEXPECTED)"  location: "JS frame :: moz-src:///toolkit/components/search/SearchEngineSelector.sys.mjs :: getEngineConfiguration :: line 105"  data: no]
+    [pid=30584][out] console.error: WebExtensions: 
+    [pid=30584][out]   Message: [Exception... "Failed to get engine data from Remote Settings"  nsresult: "0x8000ffff (NS_ERROR_UNEXPECTED)"  location: "JS frame :: moz-src:///toolkit/components/search/SearchEngineSelector.sys.mjs :: getEngineConfiguration :: line 105"  data: no]
+    [pid=30584][out]   Stack:
+    [pid=30584][out]     getEngineConfiguration@moz-src:///toolkit/components/search/SearchEngineSelector.sys.mjs:105:24
+    [pid=30584][out] 
+    [pid=30584][out] console.error: "Received empty top sites configuration!"
+    [pid=30584][err] JavaScript error: moz-src:///toolkit/components/search/SearchEngineSelector.sys.mjs, line 105: NS_ERROR_UNEXPECTED: Failed to get engine data from Remote Settings
+    [pid=30584][err] JavaScript error: moz-src:///toolkit/components/search/SearchEngineSelector.sys.mjs, line 105: NS_ERROR_UNEXPECTED: Failed to get engine data from Remote Settings
+    [pid=30584][err] JavaScript error: moz-src:///toolkit/components/search/SearchEngineSelector.sys.mjs, line 105: NS_ERROR_UNEXPECTED: Failed to get engine data from Remote Settings
+    [pid=30584][err] JavaScript error: moz-src:///toolkit/components/search/SearchEngineSelector.sys.mjs, line 105: NS_ERROR_UNEXPECTED: Failed to get engine data from Remote Settings
+    [pid=30584][out] console.error: "Search service failed to init"
+    [pid=30584][out] console.error: URLBar - Provider.UrlbarProviderSearchTips: [Exception... "Failed to get engine data from Remote Settings"  nsresult: "0x8000ffff (NS_ERROR_UNEXPECTED)"  location: "JS frame :: moz-src:///toolkit/components/search/SearchEngineSelector.sys.mjs :: getEngineConfiguration :: line 105"  data: no]
+    [pid=30584][out] console.error: SearchSettings: "_write: Could not write to settings file:" (new Error("cannot write without any engine.", "moz-src:///toolkit/components/search/SearchSettings.sys.mjs", 328))
+    [pid=30584][out] console.error: CustomizableUI: 
+    [pid=30584][out]   Could not localize property 'fxms-bmb-button.tooltiptext'.
+    [pid=30584][err] JavaScript warning: https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015, line 1: Script terminated by timeout at:
+    [pid=30584][err] 104/T/<@https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015:1:11646
+    [pid=30584][err] t@https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015:1:11507
+    [pid=30584][err] EventListener.handleEvent*h@https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015:1:11555
+    [pid=30584][err] 104/e.onLCP/<@https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015:1:18552
+    [pid=30584][err] P@https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015:1:12283
+    [pid=30584][err] 104/e.onLCP/<@https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015:1:18131
+    [pid=30584][err] 104/e.onLCP@https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015:1:18692
+    [pid=30584][err] 168/<@https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015:1:2929
+    [pid=30584][err] 168/<@https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015:1:8214
+    [pid=30584][err] 168@https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015:1:8217
+    [pid=30584][err] n@https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015:1:19900
+    [pid=30584][err] @https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015:1:19940
+    [pid=30584][err] @https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015:1:19946
+    [pid=30584][err] 
+    [pid=30584][err] JavaScript error: chrome://juggler/content/Helper.js, line 82: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIWebProgress.removeProgressListener]
+    [pid=30584][out] console.error: "Search service failed to init"
+    [pid=30584][out] console.error: URLBar - Provider.UrlbarProviderSearchTips: [Exception... "Failed to get engine data from Remote Settings"  nsresult: "0x8000ffff (NS_ERROR_UNEXPECTED)"  location: "JS frame :: moz-src:///toolkit/components/search/SearchEngineSelector.sys.mjs :: getEngineConfiguration :: line 105"  data: no]
+    [pid=30584][out] console.error: "Search service failed to init"
+    [pid=30584][out] 
+    [pid=30584][out]         ERROR: error in channel "content::10/12/2": exception while running method "disposeObject" in namespace "page": Failed to find execution context with id = id-7 findExecutionContext@chrome://juggler/content/content/Runtime.js:288:13
+    [pid=30584][out] disposeObject@chrome://juggler/content/content/Runtime.js:119:35
+    [pid=30584][out] _onMessageInternal@chrome://juggler/content/SimpleChannel.js:237:37
+    [pid=30584][out] _onMessage@chrome://juggler/content/SimpleChannel.js:194:12
+    [pid=30584][out] bindToActor/actor.receiveMessage@chrome://juggler/content/SimpleChannel.js:39:44
+    [pid=30584][out]  _onMessageInternal@chrome://juggler/content/SimpleChannel.js:208:24
+    [pid=30584][out] _onMessage@chrome://juggler/content/SimpleChannel.js:194:12
+    [pid=30584][out] bindToActor/actor.receiveMessage@chrome://juggler/content/SimpleChannel.js:39:44
+    [pid=30584][out] 
+    [pid=30584][out]       console.error: "Search service failed to init"
+    [pid=30584][err] JavaScript warning: https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/orchestrate/chl_api/v1?ray=95fb32901a45a8e5&lang=auto, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+    [pid=30584][err] JavaScript warning: resource://gre/modules/UpdateService.sys.mjs, line 3878: unreachable code after return statement
+    [pid=30584][out] 
+    [pid=30584][out]         ERROR: error in channel "content::10/12/2": exception while running method "evaluate" in namespace "page": Permission denied to access property "windowUtils" on cross-origin object evaluateScript@chrome://juggler/content/content/Runtime.js:356:29
+    [pid=30584][out] evaluate@chrome://juggler/content/content/Runtime.js:90:41
+    [pid=30584][out] _onMessageInternal@chrome://juggler/content/SimpleChannel.js:237:37
+    [pid=30584][out] _onMessage@chrome://juggler/content/SimpleChannel.js:194:12
+    [pid=30584][out] bindToActor/actor.receiveMessage@chrome://juggler/content/SimpleChannel.js:39:44
+    [pid=30584][out]  _onMessageInternal@chrome://juggler/content/SimpleChannel.js:208:24
+    [pid=30584][out] _onMessage@chrome://juggler/content/SimpleChannel.js:194:12
+    [pid=30584][out] bindToActor/actor.receiveMessage@chrome://juggler/content/SimpleChannel.js:39:44
+    [pid=30584][out] 
+    [pid=30584][err] JavaScript error: chrome://juggler/content/content/Runtime.js, line 301: TypeError: argument is not a global object
+    [pid=30584] <gracefully close start>
+    [pid=30584] <kill>
+    [pid=30584] <will force kill>
+    [pid=30584] taskkill stdout: SUCCESS: The process with PID 34776 (child process of PID 33188) has been terminated.
+    SUCCESS: The process with PID 32792 (child process of PID 33188) has been terminated.
+    SUCCESS: The process with PID 26384 (child process of PID 33188) has been terminated.
+    SUCCESS: The process with PID 22576 (child process of PID 33188) has been terminated.
+    SUCCESS: The process with PID 35356 (child process of PID 33188) has been terminated.
+    SUCCESS: The process with PID 13744 (child process of PID 33188) has been terminated.
+    SUCCESS: The process with PID 31912 (child process of PID 33188) has been terminated.
+    SUCCESS: The process with PID 33188 (child process of PID 30584) has been terminated.
+    SUCCESS: The process with PID 30584 (child process of PID 30284) has been terminated.
+
+    [pid=30584][out]       
+
     Error: locator.click: Test timeout of 30000ms exceeded.
+    Browser logs:
+
+    <launching> C:\Users\USER\AppData\Local\ms-playwright\firefox-1489\firefox\firefox.exe -no-remote -wait-for-browser -foreground -profile C:\Users\USER\AppData\Local\Temp\playwright_firefoxdev_profile-FzmGvQ -juggler-pipe -silent
+    <launched> pid=30584
+    [pid=30584][err] JavaScript warning: resource://services-settings/Utils.sys.mjs, line 116: unreachable code after return statement
+    [pid=30584][out] console.warn: services.settings: Ignoring preference override of remote settings server
+    [pid=30584][out] console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+    [pid=30584][out] 
+    [pid=30584][out] Juggler listening to the pipe
+    [pid=30584][out] console.error: "Warning: unrecognized command line flag" "-foreground"
+    [pid=30584][err] JavaScript error: chrome://juggler/content/Helper.js, line 82: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIWebProgress.removeProgressListener]
+    [pid=30584][out] console.error: SearchEngineSelector: "Received empty search configuration!"
+    [pid=30584][out] console.error: "Received empty top sites configuration!"
+    [pid=30584][out] console.error: SearchEngineSelector: "Received empty search configuration!"
+    [pid=30584][out] console.error: SearchService: "#init: failure initializing search:" [Exception... "Failed to get engine data from Remote Settings"  nsresult: "0x8000ffff (NS_ERROR_UNEXPECTED)"  location: "JS frame :: moz-src:///toolkit/components/search/SearchEngineSelector.sys.mjs :: getEngineConfiguration :: line 105"  data: no]
+    [pid=30584][out] console.error: WebExtensions: 
+    [pid=30584][out]   Message: [Exception... "Failed to get engine data from Remote Settings"  nsresult: "0x8000ffff (NS_ERROR_UNEXPECTED)"  location: "JS frame :: moz-src:///toolkit/components/search/SearchEngineSelector.sys.mjs :: getEngineConfiguration :: line 105"  data: no]
+    [pid=30584][out]   Stack:
+    [pid=30584][out]     getEngineConfiguration@moz-src:///toolkit/components/search/SearchEngineSelector.sys.mjs:105:24
+    [pid=30584][out] 
+    [pid=30584][out] console.error: "Received empty top sites configuration!"
+    [pid=30584][err] JavaScript error: moz-src:///toolkit/components/search/SearchEngineSelector.sys.mjs, line 105: NS_ERROR_UNEXPECTED: Failed to get engine data from Remote Settings
+    [pid=30584][err] JavaScript error: moz-src:///toolkit/components/search/SearchEngineSelector.sys.mjs, line 105: NS_ERROR_UNEXPECTED: Failed to get engine data from Remote Settings
+    [pid=30584][err] JavaScript error: moz-src:///toolkit/components/search/SearchEngineSelector.sys.mjs, line 105: NS_ERROR_UNEXPECTED: Failed to get engine data from Remote Settings
+    [pid=30584][err] JavaScript error: moz-src:///toolkit/components/search/SearchEngineSelector.sys.mjs, line 105: NS_ERROR_UNEXPECTED: Failed to get engine data from Remote Settings
+    [pid=30584][out] console.error: "Search service failed to init"
+    [pid=30584][out] console.error: URLBar - Provider.UrlbarProviderSearchTips: [Exception... "Failed to get engine data from Remote Settings"  nsresult: "0x8000ffff (NS_ERROR_UNEXPECTED)"  location: "JS frame :: moz-src:///toolkit/components/search/SearchEngineSelector.sys.mjs :: getEngineConfiguration :: line 105"  data: no]
+    [pid=30584][out] console.error: SearchSettings: "_write: Could not write to settings file:" (new Error("cannot write without any engine.", "moz-src:///toolkit/components/search/SearchSettings.sys.mjs", 328))
+    [pid=30584][out] console.error: CustomizableUI: 
+    [pid=30584][out]   Could not localize property 'fxms-bmb-button.tooltiptext'.
+    [pid=30584][err] JavaScript warning: https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015, line 1: Script terminated by timeout at:
+    [pid=30584][err] 104/T/<@https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015:1:11646
+    [pid=30584][err] t@https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015:1:11507
+    [pid=30584][err] EventListener.handleEvent*h@https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015:1:11555
+    [pid=30584][err] 104/e.onLCP/<@https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015:1:18552
+    [pid=30584][err] P@https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015:1:12283
+    [pid=30584][err] 104/e.onLCP/<@https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015:1:18131
+    [pid=30584][err] 104/e.onLCP@https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015:1:18692
+    [pid=30584][err] 168/<@https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015:1:2929
+    [pid=30584][err] 168/<@https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015:1:8214
+    [pid=30584][err] 168@https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015:1:8217
+    [pid=30584][err] n@https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015:1:19900
+    [pid=30584][err] @https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015:1:19940
+    [pid=30584][err] @https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015:1:19946
+    [pid=30584][err] 
+    [pid=30584][err] JavaScript error: chrome://juggler/content/Helper.js, line 82: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIWebProgress.removeProgressListener]
+    [pid=30584][out] console.error: "Search service failed to init"
+    [pid=30584][out] console.error: URLBar - Provider.UrlbarProviderSearchTips: [Exception... "Failed to get engine data from Remote Settings"  nsresult: "0x8000ffff (NS_ERROR_UNEXPECTED)"  location: "JS frame :: moz-src:///toolkit/components/search/SearchEngineSelector.sys.mjs :: getEngineConfiguration :: line 105"  data: no]
+    [pid=30584][out] console.error: "Search service failed to init"
+    [pid=30584][out] 
+    [pid=30584][out]         ERROR: error in channel "content::10/12/2": exception while running method "disposeObject" in namespace "page": Failed to find execution context with id = id-7 findExecutionContext@chrome://juggler/content/content/Runtime.js:288:13
+    [pid=30584][out] disposeObject@chrome://juggler/content/content/Runtime.js:119:35
+    [pid=30584][out] _onMessageInternal@chrome://juggler/content/SimpleChannel.js:237:37
+    [pid=30584][out] _onMessage@chrome://juggler/content/SimpleChannel.js:194:12
+    [pid=30584][out] bindToActor/actor.receiveMessage@chrome://juggler/content/SimpleChannel.js:39:44
+    [pid=30584][out]  _onMessageInternal@chrome://juggler/content/SimpleChannel.js:208:24
+    [pid=30584][out] _onMessage@chrome://juggler/content/SimpleChannel.js:194:12
+    [pid=30584][out] bindToActor/actor.receiveMessage@chrome://juggler/content/SimpleChannel.js:39:44
+    [pid=30584][out] 
+    [pid=30584][out]       console.error: "Search service failed to init"
+    [pid=30584][err] JavaScript warning: https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/orchestrate/chl_api/v1?ray=95fb32901a45a8e5&lang=auto, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+    [pid=30584][err] JavaScript warning: resource://gre/modules/UpdateService.sys.mjs, line 3878: unreachable code after return statement
+    [pid=30584][out] 
+    [pid=30584][out]         ERROR: error in channel "content::10/12/2": exception while running method "evaluate" in namespace "page": Permission denied to access property "windowUtils" on cross-origin object evaluateScript@chrome://juggler/content/content/Runtime.js:356:29
+    [pid=30584][out] evaluate@chrome://juggler/content/content/Runtime.js:90:41
+    [pid=30584][out] _onMessageInternal@chrome://juggler/content/SimpleChannel.js:237:37
+    [pid=30584][out] _onMessage@chrome://juggler/content/SimpleChannel.js:194:12
+    [pid=30584][out] bindToActor/actor.receiveMessage@chrome://juggler/content/SimpleChannel.js:39:44
+    [pid=30584][out]  _onMessageInternal@chrome://juggler/content/SimpleChannel.js:208:24
+    [pid=30584][out] _onMessage@chrome://juggler/content/SimpleChannel.js:194:12
+    [pid=30584][out] bindToActor/actor.receiveMessage@chrome://juggler/content/SimpleChannel.js:39:44
+    [pid=30584][out] 
+    [pid=30584][err] JavaScript error: chrome://juggler/content/content/Runtime.js, line 301: TypeError: argument is not a global object
+    [pid=30584] <gracefully close start>
+    [pid=30584] <kill>
+    [pid=30584] <will force kill>
+    [pid=30584] taskkill stdout: SUCCESS: The process with PID 34776 (child process of PID 33188) has been terminated.
+    SUCCESS: The process with PID 32792 (child process of PID 33188) has been terminated.
+    SUCCESS: The process with PID 26384 (child process of PID 33188) has been terminated.
+    SUCCESS: The process with PID 22576 (child process of PID 33188) has been terminated.
+    SUCCESS: The process with PID 35356 (child process of PID 33188) has been terminated.
+    SUCCESS: The process with PID 13744 (child process of PID 33188) has been terminated.
+    SUCCESS: The process with PID 31912 (child process of PID 33188) has been terminated.
+    SUCCESS: The process with PID 33188 (child process of PID 30584) has been terminated.
+    SUCCESS: The process with PID 30584 (child process of PID 30284) has been terminated.
+
+    [pid=30584][out]       
     Call log:
       - waiting for locator('button[type="submit"]').filter({ hasText: 'Log in' })
 
-
-      34 |   test('should show error for empty fields', async ({ page }) => {
-      35 |     await loginPage.navigateToLogin();
-    > 36 |     await loginPage.loginButton.click();
-         |                                 ^
-      37 |     
-      38 |     // Check for validation messages
-      39 |     await expect(page.locator('.field-validation-error')).toHaveCount({ min: 1 });
+        at [pid=30584][out]     getEngineConfiguration@moz-src:///toolkit/components/search/SearchEngineSelector.sys.mjs:105:24
+        at [pid=30584][err] 104/T/<@https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015:1:11646
+        at [pid=30584][err] t@https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015:1:11507
+        at [pid=30584][err] EventListener.handleEvent*h@https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015:1:11555
+        at [pid=30584][err] 104/e.onLCP/<@https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015:1:18552
+        at [pid=30584][err] P@https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015:1:12283
+        at [pid=30584][err] 104/e.onLCP/<@https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015:1:18131
+        at [pid=30584][err] 104/e.onLCP@https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015:1:18692
+        at [pid=30584][err] 168/<@https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015:1:2929
+        at [pid=30584][err] 168/<@https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015:1:8214
+        at [pid=30584][err] 168@https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015:1:8217
+        at [pid=30584][err] n@https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015:1:19900
+        at [pid=30584][err] @https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015:1:19940
+        at [pid=30584][err] @https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015:1:19946
+        at [pid=30584][out]         ERROR: error in channel "content::10/12/2": exception while running method "disposeObject" in namespace "page": Failed to find execution context with id = id-7 findExecutionContext@chrome://juggler/content/content/Runtime.js:288:13
+        at [pid=30584][out] disposeObject@chrome://juggler/content/content/Runtime.js:119:35
+        at [pid=30584][out] _onMessageInternal@chrome://juggler/content/SimpleChannel.js:237:37
+        at [pid=30584][out] _onMessage@chrome://juggler/content/SimpleChannel.js:194:12
+        at [pid=30584][out] bindToActor/actor.receiveMessage@chrome://juggler/content/SimpleChannel.js:39:44
+        at [pid=30584][out]  _onMessageInternal@chrome://juggler/content/SimpleChannel.js:208:24
+        at [pid=30584][out] _onMessage@chrome://juggler/content/SimpleChannel.js:194:12
+        at [pid=30584][out] bindToActor/actor.receiveMessage@chrome://juggler/content/SimpleChannel.js:39:44
+        at [pid=30584][out]         ERROR: error in channel "content::10/12/2": exception while running method "evaluate" in namespace "page": Permission denied to access property "windowUtils" on cross-origin object evaluateScript@chrome://juggler/content/content/Runtime.js:356:29
+        at [pid=30584][out] evaluate@chrome://juggler/content/content/Runtime.js:90:41
+        at [pid=30584][out] _onMessageInternal@chrome://juggler/content/SimpleChannel.js:237:37
+        at [pid=30584][out] _onMessage@chrome://juggler/content/SimpleChannel.js:194:12
+        at [pid=30584][out] bindToActor/actor.receiveMessage@chrome://juggler/content/SimpleChannel.js:39:44
+        at [pid=30584][out]  _onMessageInternal@chrome://juggler/content/SimpleChannel.js:208:24
+        at [pid=30584][out] _onMessage@chrome://juggler/content/SimpleChannel.js:194:12
+        at [pid=30584][out] bindToActor/actor.receiveMessage@chrome://juggler/content/SimpleChannel.js:39:44
         at E:\Automate\tests\login.spec.js:36:33
 
     attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
     ..\test-results\login-Login-Functionality-should-show-error-for-empty-fields-firefox\test-failed-1.png
-    ────────────────────────────────────────────────────────────────────────────────────────────────
-
-    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
-    ..\test-results\login-Login-Functionality-should-show-error-for-empty-fields-firefox\video.webm
     ────────────────────────────────────────────────────────────────────────────────────────────────
 
     Error Context: ..\test-results\login-Login-Functionality-should-show-error-for-empty-fields-firefox\error-context.md
@@ -222,17 +551,56 @@
 <![CDATA[
 [[ATTACHMENT|test-results\login-Login-Functionality-should-show-error-for-empty-fields-firefox\test-failed-1.png]]
 
-[[ATTACHMENT|test-results\login-Login-Functionality-should-show-error-for-empty-fields-firefox\video.webm]]
-
 [[ATTACHMENT|test-results\login-Login-Functionality-should-show-error-for-empty-fields-firefox\error-context.md]]
 ]]>
 </system-out>
 </testcase>
 </testsuite>
-<testsuite name="registration.spec.js" timestamp="2025-07-15T17:51:05.453Z" hostname="firefox" tests="2" failures="1" skipped="0" time="35.097" errors="0">
-<testcase name="User Registration › should display registration page elements" classname="registration.spec.js" time="4.977">
+<testsuite name="registration.spec.js" timestamp="2025-07-15T18:06:30.115Z" hostname="firefox" tests="2" failures="2" skipped="0" time="41.535" errors="0">
+<testcase name="User Registration › should display registration page elements" classname="registration.spec.js" time="11.027">
+<failure message="registration.spec.js:13:3 should display registration page elements" type="FAILURE">
+<![CDATA[  [firefox] › registration.spec.js:13:3 › User Registration › should display registration page elements 
+
+    Error: Timed out 5000ms waiting for expect(page).toHaveTitle(expected)
+
+    Expected pattern: /Register/
+    Received string:  "Just a moment..."
+    Call log:
+      - Expect "toHaveTitle" with timeout 5000ms
+        9 × unexpected value "Just a moment..."
+
+
+      14 |     await homePage.navigateToRegister();
+      15 |     
+    > 16 |     await expect(page).toHaveTitle(/Register/);
+         |                        ^
+      17 |     await expect(page.locator('#FirstName')).toBeVisible();
+      18 |     await expect(page.locator('#LastName')).toBeVisible();
+      19 |     await expect(page.locator('#Email')).toBeVisible();
+        at E:\Automate\tests\registration.spec.js:16:24
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\registration-User-Registra-16b0d--registration-page-elements-firefox\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\registration-User-Registra-16b0d--registration-page-elements-firefox\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\registration-User-Registra-16b0d--registration-page-elements-firefox\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\registration-User-Registra-16b0d--registration-page-elements-firefox\test-failed-1.png]]
+
+[[ATTACHMENT|test-results\registration-User-Registra-16b0d--registration-page-elements-firefox\video.webm]]
+
+[[ATTACHMENT|test-results\registration-User-Registra-16b0d--registration-page-elements-firefox\error-context.md]]
+]]>
+</system-out>
 </testcase>
-<testcase name="User Registration › should show validation errors for empty fields" classname="registration.spec.js" time="30.12">
+<testcase name="User Registration › should show validation errors for empty fields" classname="registration.spec.js" time="30.508">
 <failure message="registration.spec.js:25:3 should show validation errors for empty fields" type="FAILURE">
 <![CDATA[  [firefox] › registration.spec.js:25:3 › User Registration › should show validation errors for empty fields 
 
@@ -240,17 +608,27 @@
 
     Error: locator.click: Test timeout of 30000ms exceeded.
     Call log:
-      - waiting for locator('#register-button')
+      - waiting for locator('.ico-register')
+        - locator resolved to <a class="ico-register" href="/register?returnUrl=%2F">Register</a>
+      - attempting click action
+        - waiting for element to be visible, enabled and stable
+        - element is visible, enabled and stable
+        - scrolling into view if needed
+        - done scrolling
+        - performing click action
 
 
-      25 |   test('should show validation errors for empty fields', async ({ page }) => {
-      26 |     await homePage.navigateToRegister();
-    > 27 |     await page.locator('#register-button').click();
-         |                                            ^
-      28 |     
-      29 |     // Check for validation errors
-      30 |     await expect(page.locator('.field-validation-error')).toHaveCount({ min: 1 });
-        at E:\Automate\tests\registration.spec.js:27:44
+       at ..\page-objects\HomePage.js:32
+
+      30 |
+      31 |   async navigateToRegister() {
+    > 32 |     await this.registerLink.click();
+         |                             ^
+      33 |   }
+      34 |
+      35 |   async navigateToCart() {
+        at HomePage.navigateToRegister (E:\Automate\page-objects\HomePage.js:32:29)
+        at E:\Automate\tests\registration.spec.js:26:20
 
     attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
     ..\test-results\registration-User-Registra-b47b0-ion-errors-for-empty-fields-firefox\test-failed-1.png
@@ -274,16 +652,16 @@
 </system-out>
 </testcase>
 </testsuite>
-<testsuite name="search.spec.js" timestamp="2025-07-15T17:51:05.453Z" hostname="firefox" tests="3" failures="0" skipped="0" time="17.195" errors="0">
-<testcase name="Search Functionality › should display search elements" classname="search.spec.js" time="6.596">
+<testsuite name="search.spec.js" timestamp="2025-07-15T18:06:30.115Z" hostname="firefox" tests="3" failures="0" skipped="0" time="19.602" errors="0">
+<testcase name="Search Functionality › should display search elements" classname="search.spec.js" time="6.21">
 </testcase>
-<testcase name="Search Functionality › should search with valid term" classname="search.spec.js" time="5.212">
+<testcase name="Search Functionality › should search with valid term" classname="search.spec.js" time="7.086">
 </testcase>
-<testcase name="Search Functionality › should handle search with no results" classname="search.spec.js" time="5.387">
+<testcase name="Search Functionality › should handle search with no results" classname="search.spec.js" time="6.306">
 </testcase>
 </testsuite>
-<testsuite name="login.spec.js" timestamp="2025-07-15T17:51:05.453Z" hostname="webkit" tests="3" failures="3" skipped="0" time="83.037" errors="0">
-<testcase name="Login Functionality › should display login page elements" classname="login.spec.js" time="12.594">
+<testsuite name="login.spec.js" timestamp="2025-07-15T18:06:30.115Z" hostname="webkit" tests="3" failures="3" skipped="0" time="87.271" errors="0">
+<testcase name="Login Functionality › should display login page elements" classname="login.spec.js" time="16.799">
 <failure message="login.spec.js:16:3 should display login page elements" type="FAILURE">
 <![CDATA[  [webkit] › login.spec.js:16:3 › Login Functionality › should display login page elements ─────────
 
@@ -293,7 +671,7 @@
     Received string:  "Just a moment..."
     Call log:
       - Expect "toHaveTitle" with timeout 5000ms
-        5 × unexpected value "Just a moment..."
+        2 × unexpected value "Just a moment..."
         - waiting for navigation to finish...
 
 
@@ -323,7 +701,7 @@
 ]]>
 </system-out>
 </testcase>
-<testcase name="Login Functionality › should show error for invalid credentials" classname="login.spec.js" time="35.223">
+<testcase name="Login Functionality › should show error for invalid credentials" classname="login.spec.js" time="35.253">
 <failure message="login.spec.js:26:3 should show error for invalid credentials" type="FAILURE">
 <![CDATA[  [webkit] › login.spec.js:26:3 › Login Functionality › should show error for invalid credentials ──
 
@@ -364,7 +742,7 @@
 ]]>
 </system-out>
 </testcase>
-<testcase name="Login Functionality › should show error for empty fields" classname="login.spec.js" time="35.22">
+<testcase name="Login Functionality › should show error for empty fields" classname="login.spec.js" time="35.219">
 <failure message="login.spec.js:34:3 should show error for empty fields" type="FAILURE">
 <![CDATA[  [webkit] › login.spec.js:34:3 › Login Functionality › should show error for empty fields ─────────
 
@@ -388,8 +766,8 @@
 </system-out>
 </testcase>
 </testsuite>
-<testsuite name="registration.spec.js" timestamp="2025-07-15T17:51:05.453Z" hostname="webkit" tests="2" failures="2" skipped="0" time="48.738" errors="0">
-<testcase name="User Registration › should display registration page elements" classname="registration.spec.js" time="13.56">
+<testsuite name="registration.spec.js" timestamp="2025-07-15T18:06:30.115Z" hostname="webkit" tests="2" failures="2" skipped="0" time="50.194" errors="0">
+<testcase name="User Registration › should display registration page elements" classname="registration.spec.js" time="14.983">
 <failure message="registration.spec.js:13:3 should display registration page elements" type="FAILURE">
 <![CDATA[  [webkit] › registration.spec.js:13:3 › User Registration › should display registration page elements 
 
@@ -429,7 +807,7 @@
 ]]>
 </system-out>
 </testcase>
-<testcase name="User Registration › should show validation errors for empty fields" classname="registration.spec.js" time="35.178">
+<testcase name="User Registration › should show validation errors for empty fields" classname="registration.spec.js" time="35.211">
 <failure message="registration.spec.js:25:3 should show validation errors for empty fields" type="FAILURE">
 <![CDATA[  [webkit] › registration.spec.js:25:3 › User Registration › should show validation errors for empty fields 
 
@@ -453,16 +831,16 @@
 </system-out>
 </testcase>
 </testsuite>
-<testsuite name="search.spec.js" timestamp="2025-07-15T17:51:05.453Z" hostname="webkit" tests="3" failures="0" skipped="0" time="7.899" errors="0">
-<testcase name="Search Functionality › should display search elements" classname="search.spec.js" time="2.237">
+<testsuite name="search.spec.js" timestamp="2025-07-15T18:06:30.115Z" hostname="webkit" tests="3" failures="0" skipped="0" time="7.723" errors="0">
+<testcase name="Search Functionality › should display search elements" classname="search.spec.js" time="2.243">
 </testcase>
-<testcase name="Search Functionality › should search with valid term" classname="search.spec.js" time="2.573">
+<testcase name="Search Functionality › should search with valid term" classname="search.spec.js" time="2.767">
 </testcase>
-<testcase name="Search Functionality › should handle search with no results" classname="search.spec.js" time="3.089">
+<testcase name="Search Functionality › should handle search with no results" classname="search.spec.js" time="2.713">
 </testcase>
 </testsuite>
-<testsuite name="login.spec.js" timestamp="2025-07-15T17:51:05.453Z" hostname="mobile" tests="3" failures="3" skipped="0" time="85.092" errors="0">
-<testcase name="Login Functionality › should display login page elements" classname="login.spec.js" time="14.82">
+<testsuite name="login.spec.js" timestamp="2025-07-15T18:06:30.115Z" hostname="mobile" tests="3" failures="3" skipped="0" time="84.649" errors="0">
+<testcase name="Login Functionality › should display login page elements" classname="login.spec.js" time="14.339">
 <failure message="login.spec.js:16:3 should display login page elements" type="FAILURE">
 <![CDATA[  [mobile] › login.spec.js:16:3 › Login Functionality › should display login page elements ─────────
 
@@ -472,7 +850,7 @@
     Received string:  "Just a moment..."
     Call log:
       - Expect "toHaveTitle" with timeout 5000ms
-        3 × unexpected value "Just a moment..."
+        2 × unexpected value "Just a moment..."
         - waiting for navigation to finish...
 
 
@@ -502,7 +880,7 @@
 ]]>
 </system-out>
 </testcase>
-<testcase name="Login Functionality › should show error for invalid credentials" classname="login.spec.js" time="35.144">
+<testcase name="Login Functionality › should show error for invalid credentials" classname="login.spec.js" time="35.16">
 <failure message="login.spec.js:26:3 should show error for invalid credentials" type="FAILURE">
 <![CDATA[  [mobile] › login.spec.js:26:3 › Login Functionality › should show error for invalid credentials ──
 
@@ -543,7 +921,7 @@
 ]]>
 </system-out>
 </testcase>
-<testcase name="Login Functionality › should show error for empty fields" classname="login.spec.js" time="35.128">
+<testcase name="Login Functionality › should show error for empty fields" classname="login.spec.js" time="35.15">
 <failure message="login.spec.js:34:3 should show error for empty fields" type="FAILURE">
 <![CDATA[  [mobile] › login.spec.js:34:3 › Login Functionality › should show error for empty fields ─────────
 
@@ -567,8 +945,8 @@
 </system-out>
 </testcase>
 </testsuite>
-<testsuite name="registration.spec.js" timestamp="2025-07-15T17:51:05.453Z" hostname="mobile" tests="2" failures="2" skipped="0" time="48.416" errors="0">
-<testcase name="User Registration › should display registration page elements" classname="registration.spec.js" time="13.292">
+<testsuite name="registration.spec.js" timestamp="2025-07-15T18:06:30.115Z" hostname="mobile" tests="2" failures="2" skipped="0" time="48.442" errors="0">
+<testcase name="User Registration › should display registration page elements" classname="registration.spec.js" time="13.272">
 <failure message="registration.spec.js:13:3 should display registration page elements" type="FAILURE">
 <![CDATA[  [mobile] › registration.spec.js:13:3 › User Registration › should display registration page elements 
 
@@ -578,7 +956,7 @@
     Received string:  "Just a moment..."
     Call log:
       - Expect "toHaveTitle" with timeout 5000ms
-        4 × unexpected value "Just a moment..."
+        3 × unexpected value "Just a moment..."
         - waiting for navigation to finish...
 
 
@@ -608,7 +986,7 @@
 ]]>
 </system-out>
 </testcase>
-<testcase name="User Registration › should show validation errors for empty fields" classname="registration.spec.js" time="35.124">
+<testcase name="User Registration › should show validation errors for empty fields" classname="registration.spec.js" time="35.17">
 <failure message="registration.spec.js:25:3 should show validation errors for empty fields" type="FAILURE">
 <![CDATA[  [mobile] › registration.spec.js:25:3 › User Registration › should show validation errors for empty fields 
 
@@ -632,12 +1010,12 @@
 </system-out>
 </testcase>
 </testsuite>
-<testsuite name="search.spec.js" timestamp="2025-07-15T17:51:05.453Z" hostname="mobile" tests="3" failures="0" skipped="0" time="6.77" errors="0">
-<testcase name="Search Functionality › should display search elements" classname="search.spec.js" time="1.554">
+<testsuite name="search.spec.js" timestamp="2025-07-15T18:06:30.115Z" hostname="mobile" tests="3" failures="0" skipped="0" time="9.638" errors="0">
+<testcase name="Search Functionality › should display search elements" classname="search.spec.js" time="2.667">
 </testcase>
-<testcase name="Search Functionality › should search with valid term" classname="search.spec.js" time="2.427">
+<testcase name="Search Functionality › should search with valid term" classname="search.spec.js" time="3.067">
 </testcase>
-<testcase name="Search Functionality › should handle search with no results" classname="search.spec.js" time="2.789">
+<testcase name="Search Functionality › should handle search with no results" classname="search.spec.js" time="3.904">
 </testcase>
 </testsuite>
 </testsuites>
