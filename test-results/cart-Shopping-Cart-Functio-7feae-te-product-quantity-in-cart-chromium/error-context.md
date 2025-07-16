@@ -1,0 +1,222 @@
+# Page snapshot
+
+```yaml
+- status
+- link "Skip navigation":
+  - /url: "#main"
+- combobox "Currency selector":
+  - option "US Dollar" [selected]
+  - option "Euro"
+- list:
+  - listitem:
+    - link "Register":
+      - /url: /register?returnUrl=%2Fhtc-smartphone
+  - listitem:
+    - link "Log in":
+      - /url: /login?returnUrl=%2Fhtc-smartphone
+  - listitem:
+    - link "Wishlist (0)":
+      - /url: /wishlist
+  - listitem:
+    - link "Shopping cart (0)":
+      - /url: /cart
+- link "nopCommerce demo store":
+  - /url: /
+  - img "nopCommerce demo store"
+- textbox "Search store"
+- button "Search"
+- list:
+  - listitem:
+    - link "Computers":
+      - /url: /computers
+  - listitem:
+    - link "Electronics":
+      - /url: /electronics
+  - listitem:
+    - link "Apparel":
+      - /url: /apparel
+  - listitem:
+    - link "Digital downloads":
+      - /url: /digital-downloads
+  - listitem:
+    - link "Books":
+      - /url: /books
+  - listitem:
+    - link "Jewelry":
+      - /url: /jewelry
+  - listitem:
+    - link "Gift Cards":
+      - /url: /gift-cards
+- main:
+  - list:
+    - listitem:
+      - link "Home":
+        - /url: /
+      - text: /
+    - listitem:
+      - link "Electronics":
+        - /url: /electronics
+      - text: /
+    - listitem:
+      - link "Cell phones":
+        - /url: /cell-phones
+      - text: /
+    - listitem:
+      - strong: HTC smartphone
+  - img "Picture of HTC smartphone"
+  - heading "HTC smartphone" [level=1]
+  - text: "HTC - One (M8) 4G LTE Cell Phone with 32GB Memory - Gunmetal (Sprint) SKU: M8_HTC_5L $245.00"
+  - textbox "Enter a quantity": "1"
+  - button "Add to cart"
+  - link "Please select the address you want to ship to":
+    - /url: "#estimate-shipping-popup-18"
+  - button "Add to wishlist"
+  - button "Add to compare list"
+  - button "Email a friend"
+  - img "facebook sharing button"
+  - img "twitter sharing button"
+  - img "email sharing button"
+  - img "sharethis sharing button"
+  - paragraph: "HTC One (M8) Cell Phone for Sprint: With its brushed-metal design and wrap-around unibody frame, the HTC One (M8) is designed to fit beautifully in your hand. It's fun to use with amped up sound and a large Full HD touch screen, and intuitive gesture controls make it seem like your phone almost knows what you need before you do. Sprint Easy Pay option available in store."
+  - strong: Product tags
+  - list:
+    - listitem:
+      - link "awesome":
+        - /url: /awesome
+      - text: (18)
+    - listitem: ","
+    - listitem:
+      - link "compact":
+        - /url: /compact
+      - text: (7)
+    - listitem: ","
+    - listitem:
+      - link "cell":
+        - /url: /cell
+      - text: (4)
+  - strong: Related products
+  - link "Picture of HTC One Mini Blue":
+    - /url: /htc-one-mini-blue
+    - img "Picture of HTC One Mini Blue"
+  - heading "HTC One Mini Blue" [level=2]:
+    - link "HTC One Mini Blue":
+      - /url: /htc-one-mini-blue
+  - text: $100.00
+  - button "Add to cart"
+  - button "Add to compare list"
+  - button "Add to wishlist"
+  - link "Picture of Nokia Lumia 1020":
+    - /url: /nokia-lumia-1020
+    - img "Picture of Nokia Lumia 1020"
+  - heading "Nokia Lumia 1020" [level=2]:
+    - link "Nokia Lumia 1020":
+      - /url: /nokia-lumia-1020
+  - text: $349.00
+  - button "Add to cart"
+  - button "Add to compare list"
+  - button "Add to wishlist"
+  - link "Picture of Beats Pill Wireless Speaker":
+    - /url: /beats-pill-wireless-speaker
+    - img "Picture of Beats Pill Wireless Speaker"
+  - heading "Beats Pill Wireless Speaker" [level=2]:
+    - link "Beats Pill Wireless Speaker":
+      - /url: /beats-pill-wireless-speaker
+  - text: From $17.00
+  - button "Add to cart"
+  - button "Add to compare list"
+  - button "Add to wishlist"
+  - link "Picture of Portable Sound Speakers":
+    - /url: /portable-sound-speakers
+    - img "Picture of Portable Sound Speakers"
+  - heading "Portable Sound Speakers" [level=2]:
+    - link "Portable Sound Speakers":
+      - /url: /portable-sound-speakers
+  - text: $37.00
+  - button "Add to cart"
+  - button "Add to compare list"
+  - button "Add to wishlist"
+  - text: Only registered users can write reviews
+- strong: Information
+- list:
+  - listitem:
+    - link "Sitemap":
+      - /url: /sitemap
+  - listitem:
+    - link "Shipping & returns":
+      - /url: /shipping-returns
+  - listitem:
+    - link "Privacy notice":
+      - /url: /privacy-notice
+  - listitem:
+    - link "Conditions of Use":
+      - /url: /conditions-of-use
+  - listitem:
+    - link "About us":
+      - /url: /about-us
+  - listitem:
+    - link "Contact us":
+      - /url: /contactus
+- strong: Customer service
+- list:
+  - listitem:
+    - link "Search":
+      - /url: /search
+  - listitem:
+    - link "News":
+      - /url: /news
+  - listitem:
+    - link "Blog":
+      - /url: /blog
+  - listitem:
+    - link "Recently viewed products":
+      - /url: /recentlyviewedproducts
+  - listitem:
+    - link "Compare products list":
+      - /url: /compareproducts
+  - listitem:
+    - link "New products":
+      - /url: /newproducts
+- strong: My account
+- list:
+  - listitem:
+    - link "My account":
+      - /url: /customer/info
+  - listitem:
+    - link "Orders":
+      - /url: /order/history
+  - listitem:
+    - link "Addresses":
+      - /url: /customer/addresses
+  - listitem:
+    - link "Shopping cart":
+      - /url: /cart
+  - listitem:
+    - link "Wishlist":
+      - /url: /wishlist
+  - listitem:
+    - link "Apply for vendor account":
+      - /url: /vendor/apply
+- strong: Follow us
+- list:
+  - listitem:
+    - link "Facebook":
+      - /url: https://www.facebook.com/nopCommerce
+  - listitem:
+    - link "Twitter":
+      - /url: https://twitter.com/nopCommerce
+  - listitem:
+    - link "RSS":
+      - /url: /news/rss/1
+  - listitem:
+    - link "YouTube":
+      - /url: https://www.youtube.com/user/nopCommerce
+  - listitem:
+    - link "Instagram":
+      - /url: https://www.instagram.com/nopcommerce_official
+- strong: Newsletter
+- textbox "Sign up for our newsletter"
+- button "Subscribe"
+- text: Copyright © 2025 nopCommerce demo store. All rights reserved. Powered by
+- link "nopCommerce":
+  - /url: https://www.nopcommerce.com/
+```

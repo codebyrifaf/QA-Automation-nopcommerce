@@ -1,0 +1,248 @@
+# Page snapshot
+
+```yaml
+- status
+- link "Skip navigation":
+  - /url: "#main"
+- combobox "Currency selector":
+  - option "US Dollar" [selected]
+  - option "Euro"
+- list:
+  - listitem:
+    - link "Register":
+      - /url: /register?returnUrl=%2Fasus-laptop
+  - listitem:
+    - link "Log in":
+      - /url: /login?returnUrl=%2Fasus-laptop
+  - listitem:
+    - link "Wishlist (0)":
+      - /url: /wishlist
+  - listitem:
+    - link "Shopping cart (0)":
+      - /url: /cart
+- link "nopCommerce demo store":
+  - /url: /
+  - img "nopCommerce demo store"
+- textbox "Search store"
+- button "Search"
+- list:
+  - listitem:
+    - link "Computers":
+      - /url: /computers
+  - listitem:
+    - link "Electronics":
+      - /url: /electronics
+  - listitem:
+    - link "Apparel":
+      - /url: /apparel
+  - listitem:
+    - link "Digital downloads":
+      - /url: /digital-downloads
+  - listitem:
+    - link "Books":
+      - /url: /books
+  - listitem:
+    - link "Jewelry":
+      - /url: /jewelry
+  - listitem:
+    - link "Gift Cards":
+      - /url: /gift-cards
+- main:
+  - list:
+    - listitem:
+      - link "Home":
+        - /url: /
+      - text: /
+    - listitem:
+      - link "Computers":
+        - /url: /computers
+      - text: /
+    - listitem:
+      - link "Notebooks":
+        - /url: /notebooks
+      - text: /
+    - listitem:
+      - strong: Asus Laptop
+  - img "Picture of Asus Laptop"
+  - heading "Asus Laptop" [level=1]
+  - text: Laptop Asus N551JK Intel Core i7-4710HQ 2.5 GHz, RAM 16GB, HDD 1TB, Video NVidia GTX 850M 4GB, BluRay, 15.6, Full HD, Win 8.1
+  - link "1 review(s)":
+    - /url: "#productreviews"
+  - text: "SKU: AS_551_LP $1,500.00"
+  - textbox "Enter a quantity": "1"
+  - button "Add to cart"
+  - link "Please select the address you want to ship to":
+    - /url: "#estimate-shipping-popup-5"
+  - button "Add to wishlist"
+  - button "Add to compare list"
+  - button "Email a friend"
+  - img "facebook sharing button"
+  - img "twitter sharing button"
+  - img "email sharing button"
+  - img "sharethis sharing button"
+  - paragraph: The ASUS N550JX combines cutting-edge audio and visual technology to deliver an unsurpassed multimedia experience. A full HD wide-view IPS panel is tailor-made for watching movies and the intuitive touchscreen makes for easy, seamless navigation. ASUS has paired the N550JX’s impressive display with SonicMaster Premium, co-developed with Bang & Olufsen ICEpower® audio experts, for true surround sound. A quad-speaker array and external subwoofer combine for distinct vocals and a low bass that you can feel.
+  - strong: Products specifications
+  - table:
+    - rowgroup:
+      - row "Attribute name Attribute value":
+        - cell "Attribute name"
+        - cell "Attribute value"
+    - rowgroup:
+      - row "Screensize 15.6''":
+        - cell "Screensize"
+        - cell "15.6''"
+      - row "System unit":
+        - cell "System unit"
+      - row "CPU Type Intel Core i7":
+        - cell "CPU Type"
+        - cell "Intel Core i7"
+      - row "Memory 16 GB":
+        - cell "Memory"
+        - cell "16 GB"
+      - row "Hard drive 1 TB":
+        - cell "Hard drive"
+        - cell "1 TB"
+  - strong: Product tags
+  - list:
+    - listitem:
+      - link "awesome":
+        - /url: /awesome
+      - text: (18)
+    - listitem: ","
+    - listitem:
+      - link "computer":
+        - /url: /computer
+      - text: (14)
+    - listitem: ","
+    - listitem:
+      - link "compact":
+        - /url: /compact
+      - text: (7)
+  - strong: Related products
+  - link "Picture of Lenovo Thinkpad Carbon Laptop":
+    - /url: /lenovo-thinkpad-carbon-laptop
+    - img "Picture of Lenovo Thinkpad Carbon Laptop"
+  - heading "Lenovo Thinkpad Carbon Laptop" [level=2]:
+    - link "Lenovo Thinkpad Carbon Laptop":
+      - /url: /lenovo-thinkpad-carbon-laptop
+  - text: $1,360.00
+  - button "Add to cart"
+  - button "Add to compare list"
+  - button "Add to wishlist"
+  - link "Picture of Apple MacBook Pro":
+    - /url: /apple-macbook-pro
+    - img "Picture of Apple MacBook Pro"
+  - heading "Apple MacBook Pro" [level=2]:
+    - link "Apple MacBook Pro":
+      - /url: /apple-macbook-pro
+  - text: $1,800.00
+  - button "Add to cart"
+  - button "Add to compare list"
+  - button "Add to wishlist"
+  - link "Picture of Samsung Premium Ultrabook":
+    - /url: /samsung-premium-ultrabook
+    - img "Picture of Samsung Premium Ultrabook"
+  - heading "Samsung Premium Ultrabook" [level=2]:
+    - link "Samsung Premium Ultrabook":
+      - /url: /samsung-premium-ultrabook
+  - text: $1,590.00
+  - button "Add to cart"
+  - button "Add to compare list"
+  - button "Add to wishlist"
+  - link "Picture of HP Spectre XT Pro UltraBook":
+    - /url: /hp-spectre-xt-pro-ultrabook
+    - img "Picture of HP Spectre XT Pro UltraBook"
+  - heading "HP Spectre XT Pro UltraBook" [level=2]:
+    - link "HP Spectre XT Pro UltraBook":
+      - /url: /hp-spectre-xt-pro-ultrabook
+  - text: $1,350.00
+  - button "Add to cart"
+  - button "Add to compare list"
+  - button "Add to wishlist"
+  - strong: Existing reviews
+  - strong: Some sample review
+  - text: "5 This sample review is for the Asus Laptop. I've been waiting for this product to be available. It is priced just right. From: John | Date: 2/11/2025 3:20 AM Was this review helpful? Yes No (0/0) Only registered users can write reviews"
+- strong: Information
+- list:
+  - listitem:
+    - link "Sitemap":
+      - /url: /sitemap
+  - listitem:
+    - link "Shipping & returns":
+      - /url: /shipping-returns
+  - listitem:
+    - link "Privacy notice":
+      - /url: /privacy-notice
+  - listitem:
+    - link "Conditions of Use":
+      - /url: /conditions-of-use
+  - listitem:
+    - link "About us":
+      - /url: /about-us
+  - listitem:
+    - link "Contact us":
+      - /url: /contactus
+- strong: Customer service
+- list:
+  - listitem:
+    - link "Search":
+      - /url: /search
+  - listitem:
+    - link "News":
+      - /url: /news
+  - listitem:
+    - link "Blog":
+      - /url: /blog
+  - listitem:
+    - link "Recently viewed products":
+      - /url: /recentlyviewedproducts
+  - listitem:
+    - link "Compare products list":
+      - /url: /compareproducts
+  - listitem:
+    - link "New products":
+      - /url: /newproducts
+- strong: My account
+- list:
+  - listitem:
+    - link "My account":
+      - /url: /customer/info
+  - listitem:
+    - link "Orders":
+      - /url: /order/history
+  - listitem:
+    - link "Addresses":
+      - /url: /customer/addresses
+  - listitem:
+    - link "Shopping cart":
+      - /url: /cart
+  - listitem:
+    - link "Wishlist":
+      - /url: /wishlist
+  - listitem:
+    - link "Apply for vendor account":
+      - /url: /vendor/apply
+- strong: Follow us
+- list:
+  - listitem:
+    - link "Facebook":
+      - /url: https://www.facebook.com/nopCommerce
+  - listitem:
+    - link "Twitter":
+      - /url: https://twitter.com/nopCommerce
+  - listitem:
+    - link "RSS":
+      - /url: /news/rss/1
+  - listitem:
+    - link "YouTube":
+      - /url: https://www.youtube.com/user/nopCommerce
+  - listitem:
+    - link "Instagram":
+      - /url: https://www.instagram.com/nopcommerce_official
+- strong: Newsletter
+- textbox "Sign up for our newsletter"
+- button "Subscribe"
+- text: Copyright © 2025 nopCommerce demo store. All rights reserved. Powered by
+- link "nopCommerce":
+  - /url: https://www.nopcommerce.com/
+```

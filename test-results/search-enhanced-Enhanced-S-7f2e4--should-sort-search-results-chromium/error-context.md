@@ -1,0 +1,263 @@
+# Page snapshot
+
+```yaml
+- status
+- link "Skip navigation":
+  - /url: "#main"
+- combobox "Currency selector":
+  - option "US Dollar" [selected]
+  - option "Euro"
+- list:
+  - listitem:
+    - link "Register":
+      - /url: /register?returnUrl=%2Fsearch%3Fq%3Dlaptop
+  - listitem:
+    - link "Log in":
+      - /url: /login?returnUrl=%2Fsearch%3Fq%3Dlaptop
+  - listitem:
+    - link "Wishlist (0)":
+      - /url: /wishlist
+  - listitem:
+    - link "Shopping cart (0)":
+      - /url: /cart
+- link "nopCommerce demo store":
+  - /url: /
+  - img "nopCommerce demo store"
+- textbox "Search store"
+- button "Search"
+- list:
+  - listitem:
+    - link "Computers":
+      - /url: /computers
+  - listitem:
+    - link "Electronics":
+      - /url: /electronics
+  - listitem:
+    - link "Apparel":
+      - /url: /apparel
+  - listitem:
+    - link "Digital downloads":
+      - /url: /digital-downloads
+  - listitem:
+    - link "Books":
+      - /url: /books
+  - listitem:
+    - link "Jewelry":
+      - /url: /jewelry
+  - listitem:
+    - link "Gift Cards":
+      - /url: /gift-cards
+- main:
+  - strong: Filter by price
+  - text: 0 10000
+  - strong: Categories
+  - list:
+    - listitem:
+      - link "Computers":
+        - /url: /computers
+    - listitem:
+      - link "Electronics":
+        - /url: /electronics
+    - listitem:
+      - link "Apparel":
+        - /url: /apparel
+    - listitem:
+      - link "Digital downloads":
+        - /url: /digital-downloads
+    - listitem:
+      - link "Books":
+        - /url: /books
+    - listitem:
+      - link "Jewelry":
+        - /url: /jewelry
+    - listitem:
+      - link "Gift Cards":
+        - /url: /gift-cards
+  - strong: Manufacturers
+  - list:
+    - listitem:
+      - link "Apple":
+        - /url: /apple
+    - listitem:
+      - link "HP":
+        - /url: /hp
+  - link "View all":
+    - /url: /manufacturer/all
+  - strong: Popular tags
+  - list:
+    - listitem:
+      - link "apparel":
+        - /url: /apparel-2
+    - listitem:
+      - link "awesome":
+        - /url: /awesome
+    - listitem:
+      - link "book":
+        - /url: /book
+    - listitem:
+      - link "camera":
+        - /url: /camera
+    - listitem:
+      - link "cell":
+        - /url: /cell
+    - listitem:
+      - link "compact":
+        - /url: /compact
+    - listitem:
+      - link "computer":
+        - /url: /computer
+    - listitem:
+      - link "cool":
+        - /url: /cool
+    - listitem:
+      - link "digital":
+        - /url: /digital
+    - listitem:
+      - link "game":
+        - /url: /game
+    - listitem:
+      - link "jeans":
+        - /url: /jeans
+    - listitem:
+      - link "jewelry":
+        - /url: /jewelry-2
+    - listitem:
+      - link "nice":
+        - /url: /nice
+    - listitem:
+      - link "shirt":
+        - /url: /shirt
+    - listitem:
+      - link "shoes":
+        - /url: /shoes-2
+  - link "View all":
+    - /url: /producttag/all
+  - heading "Search" [level=1]
+  - text: "Search keyword:"
+  - textbox "Search keyword:": laptop
+  - checkbox "Advanced search"
+  - text: Advanced search
+  - button "Search"
+  - link "Grid":
+    - /url: "#"
+  - link "List":
+    - /url: "#"
+  - text: Sort by
+  - combobox "Select product sort order":
+    - option "Position"
+    - 'option "Name: A to Z"'
+    - 'option "Name: Z to A"'
+    - 'option "Price: Low to High" [selected]'
+    - 'option "Price: High to Low"'
+    - option "Created on"
+  - text: Display
+  - combobox "Select number of products per page":
+    - option "3"
+    - option "6" [selected]
+    - option "9"
+    - option "18"
+  - text: per page
+  - link "Picture of Asus Laptop":
+    - /url: /asus-laptop
+    - img "Picture of Asus Laptop"
+  - heading "Asus Laptop" [level=2]:
+    - link "Asus Laptop":
+      - /url: /asus-laptop
+  - text: $1,500.00
+  - button "Add to cart"
+  - button "Add to compare list"
+  - button "Add to wishlist"
+  - link "Picture of Lenovo Thinkpad Carbon Laptop":
+    - /url: /lenovo-thinkpad-carbon-laptop
+    - img "Picture of Lenovo Thinkpad Carbon Laptop"
+  - heading "Lenovo Thinkpad Carbon Laptop" [level=2]:
+    - link "Lenovo Thinkpad Carbon Laptop":
+      - /url: /lenovo-thinkpad-carbon-laptop
+  - text: $1,360.00
+  - button "Add to cart"
+  - button "Add to compare list"
+  - button "Add to wishlist"
+- strong: Information
+- list:
+  - listitem:
+    - link "Sitemap":
+      - /url: /sitemap
+  - listitem:
+    - link "Shipping & returns":
+      - /url: /shipping-returns
+  - listitem:
+    - link "Privacy notice":
+      - /url: /privacy-notice
+  - listitem:
+    - link "Conditions of Use":
+      - /url: /conditions-of-use
+  - listitem:
+    - link "About us":
+      - /url: /about-us
+  - listitem:
+    - link "Contact us":
+      - /url: /contactus
+- strong: Customer service
+- list:
+  - listitem:
+    - link "Search":
+      - /url: /search
+  - listitem:
+    - link "News":
+      - /url: /news
+  - listitem:
+    - link "Blog":
+      - /url: /blog
+  - listitem:
+    - link "Recently viewed products":
+      - /url: /recentlyviewedproducts
+  - listitem:
+    - link "Compare products list":
+      - /url: /compareproducts
+  - listitem:
+    - link "New products":
+      - /url: /newproducts
+- strong: My account
+- list:
+  - listitem:
+    - link "My account":
+      - /url: /customer/info
+  - listitem:
+    - link "Orders":
+      - /url: /order/history
+  - listitem:
+    - link "Addresses":
+      - /url: /customer/addresses
+  - listitem:
+    - link "Shopping cart":
+      - /url: /cart
+  - listitem:
+    - link "Wishlist":
+      - /url: /wishlist
+  - listitem:
+    - link "Apply for vendor account":
+      - /url: /vendor/apply
+- strong: Follow us
+- list:
+  - listitem:
+    - link "Facebook":
+      - /url: https://www.facebook.com/nopCommerce
+  - listitem:
+    - link "Twitter":
+      - /url: https://twitter.com/nopCommerce
+  - listitem:
+    - link "RSS":
+      - /url: /news/rss/1
+  - listitem:
+    - link "YouTube":
+      - /url: https://www.youtube.com/user/nopCommerce
+  - listitem:
+    - link "Instagram":
+      - /url: https://www.instagram.com/nopcommerce_official
+- strong: Newsletter
+- textbox "Sign up for our newsletter"
+- button "Subscribe"
+- text: Copyright © 2025 nopCommerce demo store. All rights reserved. Powered by
+- link "nopCommerce":
+  - /url: https://www.nopcommerce.com/
+```

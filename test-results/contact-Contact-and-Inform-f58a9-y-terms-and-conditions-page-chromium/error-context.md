@@ -1,0 +1,136 @@
+# Page snapshot
+
+```yaml
+- status
+- link "Skip navigation":
+  - /url: "#main"
+- combobox "Currency selector":
+  - option "US Dollar" [selected]
+  - option "Euro"
+- list:
+  - listitem:
+    - link "Register":
+      - /url: /register?returnUrl=%2Fconditions-of-use
+  - listitem:
+    - link "Log in":
+      - /url: /login?returnUrl=%2Fconditions-of-use
+  - listitem:
+    - link "Wishlist (0)":
+      - /url: /wishlist
+  - listitem:
+    - link "Shopping cart (0)":
+      - /url: /cart
+- link "nopCommerce demo store":
+  - /url: /
+  - img "nopCommerce demo store"
+- textbox "Search store"
+- button "Search"
+- list:
+  - listitem:
+    - link "Computers":
+      - /url: /computers
+  - listitem:
+    - link "Electronics":
+      - /url: /electronics
+  - listitem:
+    - link "Apparel":
+      - /url: /apparel
+  - listitem:
+    - link "Digital downloads":
+      - /url: /digital-downloads
+  - listitem:
+    - link "Books":
+      - /url: /books
+  - listitem:
+    - link "Jewelry":
+      - /url: /jewelry
+  - listitem:
+    - link "Gift Cards":
+      - /url: /gift-cards
+- main:
+  - heading "Conditions of Use" [level=1]
+  - paragraph: Put your conditions of use information here. You can edit this in the admin site.
+- strong: Information
+- list:
+  - listitem:
+    - link "Sitemap":
+      - /url: /sitemap
+  - listitem:
+    - link "Shipping & returns":
+      - /url: /shipping-returns
+  - listitem:
+    - link "Privacy notice":
+      - /url: /privacy-notice
+  - listitem:
+    - link "Conditions of Use":
+      - /url: /conditions-of-use
+  - listitem:
+    - link "About us":
+      - /url: /about-us
+  - listitem:
+    - link "Contact us":
+      - /url: /contactus
+- strong: Customer service
+- list:
+  - listitem:
+    - link "Search":
+      - /url: /search
+  - listitem:
+    - link "News":
+      - /url: /news
+  - listitem:
+    - link "Blog":
+      - /url: /blog
+  - listitem:
+    - link "Recently viewed products":
+      - /url: /recentlyviewedproducts
+  - listitem:
+    - link "Compare products list":
+      - /url: /compareproducts
+  - listitem:
+    - link "New products":
+      - /url: /newproducts
+- strong: My account
+- list:
+  - listitem:
+    - link "My account":
+      - /url: /customer/info
+  - listitem:
+    - link "Orders":
+      - /url: /order/history
+  - listitem:
+    - link "Addresses":
+      - /url: /customer/addresses
+  - listitem:
+    - link "Shopping cart":
+      - /url: /cart
+  - listitem:
+    - link "Wishlist":
+      - /url: /wishlist
+  - listitem:
+    - link "Apply for vendor account":
+      - /url: /vendor/apply
+- strong: Follow us
+- list:
+  - listitem:
+    - link "Facebook":
+      - /url: https://www.facebook.com/nopCommerce
+  - listitem:
+    - link "Twitter":
+      - /url: https://twitter.com/nopCommerce
+  - listitem:
+    - link "RSS":
+      - /url: /news/rss/1
+  - listitem:
+    - link "YouTube":
+      - /url: https://www.youtube.com/user/nopCommerce
+  - listitem:
+    - link "Instagram":
+      - /url: https://www.instagram.com/nopcommerce_official
+- strong: Newsletter
+- textbox "Sign up for our newsletter"
+- button "Subscribe"
+- text: Copyright © 2025 nopCommerce demo store. All rights reserved. Powered by
+- link "nopCommerce":
+  - /url: https://www.nopcommerce.com/
+```

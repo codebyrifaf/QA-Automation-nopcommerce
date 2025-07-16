@@ -21,7 +21,7 @@ class HomePage {
   }
 
   async clickCategory(categoryName) {
-    await this.categories.filter({ hasText: categoryName }).click();
+    await this.categories.filter({ hasText: categoryName }).first().click();
   }
 
   async clickFeaturedProduct(index = 0) {

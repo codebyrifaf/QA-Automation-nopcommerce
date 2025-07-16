@@ -19,14 +19,13 @@ test.describe('Search Functionality', () => {
     const searchTerm = testData.searchTerms.valid[0];
     await homePage.search(searchTerm);
     
-    // Check if we're on search results page
     await expect(page).toHaveURL(/.*search/);
   });
 
   test('should handle search with no results', async ({ page }) => {
     await homePage.search(testData.searchTerms.invalid[0]);
     
-    // Check for search results page
+
     await expect(page).toHaveURL(/.*search/);
   });
 });
